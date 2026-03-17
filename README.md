@@ -1,27 +1,36 @@
-# MCP 示例代码
+# AI 学习资源库
 
-这里是《MCP 学习指南》中的所有示例代码，按难度递增排列。
+>  雯雯的 AI 学习代码和文档仓库
+> 
+> 整理：Claw🦞
+> 
+> 更新日期：2026 年 3 月 17 日
+
+---
 
 ## 📁 项目结构
 
 ```
-code/
-├── 01_hello_server/      # Hello World 示例（入门）
-├── 02_file_manager/      # 文件管理 Server（基础）
-├── 03_weather_server/    # 天气查询 Server（API 集成）
-├── 04_database_server/   # 数据库查询 Server（数据库）
-├── 05_todo_server/       # 待办事项 Server（完整应用）
-├── utils/                # 工具函数
-├── requirements.txt      # Python 依赖
-└── README.md            # 本文件
+AI_study/
+├── MCP_study/                  # 📚 MCP 学习相关
+│   ├── 01_hello_server/        # Hello World 示例（入门）
+│   ├── 02_file_manager/        # 文件管理 Server（基础）
+│   ├── 03_weather_server/      # 天气查询 Server（API 集成）
+│   ├── 04_database_server/     # 数据库查询 Server（数据库）
+│   ├── 05_todo_server/         # 待办事项 Server（完整应用）
+│   ├── utils/                  # 工具函数
+│   └── requirements.txt        # Python 依赖
+└── README.md                   # 本文件
 ```
+
+---
 
 ## 🚀 快速开始
 
 ### 1. 安装依赖
 
 ```bash
-cd /home/LiangWen/AI\ 学习/MCP/code
+cd AI_study/MCP_study
 pip install -r requirements.txt
 ```
 
@@ -29,19 +38,19 @@ pip install -r requirements.txt
 
 **Hello World:**
 ```bash
-python 01_hello_server/server.py
+python MCP_study/01_hello_server/server.py
 ```
 
 **文件管理:**
 ```bash
 # 设置工作目录
 export WORK_DIR="/home/LiangWen"
-python 02_file_manager/server.py
+python MCP_study/02_file_manager/server.py
 ```
 
 **天气查询:**
 ```bash
-python 03_weather_server/server.py
+python MCP_study/03_weather_server/server.py
 ```
 
 **数据库查询:**
@@ -51,12 +60,12 @@ sqlite3 /home/LiangWen/data.db "CREATE TABLE users (id INTEGER, name TEXT);"
 sqlite3 /home/LiangWen/data.db "INSERT INTO users VALUES (1, '雯雯'), (2, 'Claw');"
 
 # 运行 Server
-python 04_database_server/server.py
+python MCP_study/04_database_server/server.py
 ```
 
 **待办事项:**
 ```bash
-python 05_todo_server/server.py
+python MCP_study/05_todo_server/server.py
 ```
 
 ### 3. 在 Claude Desktop 中使用
@@ -73,22 +82,22 @@ python 05_todo_server/server.py
   "mcpServers": {
     "hello": {
       "command": "python",
-      "args": ["/home/LiangWen/AI 学习/MCP/code/01_hello_server/server.py"]
+      "args": ["/path/to/AI_study/MCP_study/01_hello_server/server.py"]
     },
     "file-manager": {
       "command": "python",
-      "args": ["/home/LiangWen/AI 学习/MCP/code/02_file_manager/server.py"],
+      "args": ["/path/to/AI_study/MCP_study/02_file_manager/server.py"],
       "env": {
         "WORK_DIR": "/home/LiangWen"
       }
     },
     "weather": {
       "command": "python",
-      "args": ["/home/LiangWen/AI 学习/MCP/code/03_weather_server/server.py"]
+      "args": ["/path/to/AI_study/MCP_study/03_weather_server/server.py"]
     },
     "todo": {
       "command": "python",
-      "args": ["/home/LiangWen/AI 学习/MCP/code/05_todo_server/server.py"],
+      "args": ["/path/to/AI_study/MCP_study/05_todo_server/server.py"],
       "env": {
         "TODO_FILE": "/home/LiangWen/todos.json"
       }
@@ -99,10 +108,12 @@ python 05_todo_server/server.py
 
 重启 Claude Desktop 后即可使用！
 
+---
+
 ## 📚 学习路线
 
 ### Week 1: 理解概念
-- [ ] 阅读《MCP 学习指南.md》
+- [ ] 阅读 MCP 官方文档
 - [ ] 理解 Resources/Tools/Prompts
 - [ ] 运行 Hello World 示例
 
@@ -121,17 +132,21 @@ python 05_todo_server/server.py
 - [ ] 定制自己的 MCP Server
 - [ ] 分享给朋友！
 
+---
+
 ## 🔧 调试工具
 
 **MCP Inspector:**
 ```bash
-npx @modelcontextprotocol/inspector python 01_hello_server/server.py
+npx @modelcontextprotocol/inspector python MCP_study/01_hello_server/server.py
 ```
 
 Inspector 会打开一个 Web 界面，可以：
 - 查看可用的 Tools/Resources/Prompts
 - 手动调用工具测试
 - 查看日志和错误信息
+
+---
 
 ## 🛡️ 安全提示
 
@@ -140,14 +155,31 @@ Inspector 会打开一个 Web 界面，可以：
 3. **权限控制**: 限制工作目录范围
 4. **输入验证**: 始终验证用户输入
 
+---
+
 ## 📖 相关资源
 
-- [MCP 官方文档](https://modelcontextprotocol.io)
-- [MCP GitHub](https://github.com/modelcontextprotocol)
-- [Python SDK](https://pypi.org/project/mcp/)
+| 资源 | 链接 |
+|------|------|
+| **MCP 官方文档** | https://modelcontextprotocol.io |
+| **MCP GitHub** | https://github.com/modelcontextprotocol |
+| **Python SDK** | https://pypi.org/project/mcp/ |
+| **规范文档** | https://spec.modelcontextprotocol.io |
+
+---
+
+## 📝 更新日志
+
+### 2026-03-17
+- 整理仓库结构，将所有 MCP 相关内容移至 `MCP_study/` 文件夹
+- 更新 README 中的路径引用
+
+### 2026-03-16
+- 初始提交 MCP 示例代码
+- 包含 5 个完整的 MCP Server 示例
 
 ---
 
 *代码整理：Claw🦞*
-*最后更新：2026 年 3 月 16 日*
-*雯雯加油！有问题随时问我～*
+*最后更新：2026 年 3 月 17 日*
+*雯雯加油！有问题随时问我～* 💕
